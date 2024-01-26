@@ -108,6 +108,19 @@ void Set<T>::clear()
     head = nullptr;
 }
 
+//==operator
+template <class T>
+bool Set<T>::operator==(const Set<T>& mySet) const {
+    Node* currentNode = head;
+    while (currentNode != nullptr) {
+        if (!mySet.contains(currentNode->item)) {
+            return false;
+        }
+        currentNode = currentNode->next;
+    }
+    return true;
+}
+
 // to_string
 template <class T>
 std::string Set<T>::to_string() const
