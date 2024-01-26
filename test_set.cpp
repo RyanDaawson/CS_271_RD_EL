@@ -85,12 +85,12 @@ void test_remove()
         Set<float> floatRemSet;
         floatRemSet.insert(1.5);
         floatRemSet.insert(2.5);
-        floatRemSet.remove(1.5)
+        floatRemSet.remove(1.5);
         if (floatRemSet.to_string() != "2.5") 
         {
             cout << "Incorrect insert result for float type. Expected 2.5 but got: " << floatRemSet.to_string() << endl;
         }
-        floatRemSet.remove(5.5)
+        floatRemSet.remove(5.5);
                 if (floatRemSet.to_string() != "2.5") 
         {
             cout << "Incorrect insert result for float type. Expected 2.5 but got: " << floatRemSet.to_string() << endl;
