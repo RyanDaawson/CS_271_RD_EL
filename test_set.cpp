@@ -152,7 +152,7 @@ void test_contains()
         cerr << "Error in determining if value contained in se : " << e.what() << endl;
     }
 }
-/*
+
 void test_equality()
 {
     try
@@ -189,6 +189,7 @@ void test_equality()
     }
 }
 
+/*
 void test_subset()
 {
     try
@@ -409,7 +410,6 @@ void time_test()
     total += elapsed.count();
     cout << "Total time: " << total << endl;
 }
-
 */
 
 int main()

@@ -28,7 +28,7 @@ public:
            int		    cardinality	( void ) const;
            bool		    empty		( void ) const;
            bool         contains    (const T& item) const;
-           //bool	    operator==	( void ) const;
+           bool	        operator==	( const Set<T>& mySet ) const;
            //bool       operator<=  ( void ) const;
            //Set<T>     operator+	( const Set<T> &mySet ) const;
            //Set<T>     operator&   (const Set<T>& mySet) const;
