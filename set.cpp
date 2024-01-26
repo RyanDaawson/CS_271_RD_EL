@@ -156,9 +156,13 @@ bool Set<T>::operator<=(const Set<T>& mySet) const {
     return true;
 }
 
-//union
+// For the Overloaded + operator for the two sets
 template <class T>
 Set<T> Set<T>::operator+(const Set<T>& mySet) const {
+    
+    // Pre-condition: mySet is a valid Set object.
+    // Post-condition: Returns a new set that is the union of the current set and mySet.
+    
     Set<T> new;
     Node* currentNode = head;
     while (currentNode != nullptr) {
@@ -173,9 +177,13 @@ Set<T> Set<T>::operator+(const Set<T>& mySet) const {
     return new;
 }
 
-//intersection
+// Overleaded & operator for the two sets
 template <class T>
 Set<T> Set<T>::operator&(const Set<T>& mySet) const{
+
+    // Pre-condition: mySet is a valid Set object.
+    // Post-condition: Returns a new set that is the current set and mySet.
+    
     Set<T> newSet;
     Node* currentNode = head;
     while (currentNode !=NULL){
