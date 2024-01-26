@@ -123,7 +123,7 @@ bool Set<T>::operator<=(const Set<T>& mySet) const {
     return true;
 }
 
-//+operator
+//union
 template <class T>
 Set<T> Set<T>::operator+(const Set<T>& mySet) const {
     Set<T> resultSet;
@@ -138,6 +138,17 @@ Set<T> Set<T>::operator+(const Set<T>& mySet) const {
         currentNode = currentNode->next;
     }
     return resultSet;
+}
+
+//intersection
+
+
+//difference
+template <class T>
+Set<T> Set<T>::operator-(const Set<T>& mySet) const {
+    Set<T> newSet;
+    Node* currentNode = head;
+
 }
 
 //clear
