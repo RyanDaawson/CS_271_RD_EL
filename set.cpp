@@ -126,7 +126,7 @@ bool Set<T>::operator<=(const Set<T>& mySet) const {
 //union
 template <class T>
 Set<T> Set<T>::operator+(const Set<T>& mySet) const {
-    Set<T> resultSet;
+    Set<T> new;
     Node* currentNode = head;
     while (currentNode != nullptr) {
         newSet.insert(currentNode->item);
@@ -137,7 +137,7 @@ Set<T> Set<T>::operator+(const Set<T>& mySet) const {
         newSet.insert(currentNode->item);
         currentNode = currentNode->next;
     }
-    return resultSet;
+    return new;
 }
 
 //intersection
@@ -148,7 +148,7 @@ Set<T> Set<T>::operator&(const Set<T>& mySet) const{
     while (currentNode !=NULL){
         if (mySet.contains(currentNode->item))
         {
-            newSet.insert(currentNiode->item);
+            newSet.insert(currentNode->item);
         }
         currentNode = currentNode -> next;
     }
