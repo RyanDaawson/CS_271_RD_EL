@@ -24,3 +24,12 @@ Set<T>::~Set()
     clear();
 }
 
+template <class T>
+void Set<T>::insert(const T& item) {
+    if (!contains(item)) {
+        Node* newNode = new Node;
+        newNode->item = item;
+        newNode->next = head;
+        head = newNode;
+    }
+}
