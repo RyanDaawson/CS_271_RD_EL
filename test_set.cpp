@@ -60,9 +60,7 @@ void test_remove()
     }
 }
 
-/*
 void test_cardinality()
->>>>>>> 3b8fef02c3f121841768316c87fa776c7ed4c113
 {
     try
     {
@@ -95,7 +93,7 @@ void test_cardinality()
         cerr << "Error in determining set cardinality : " << e.what() << endl;
     }
 }
-*/
+
 void test_empty()
 {
     try
@@ -154,7 +152,7 @@ void test_contains()
         cerr << "Error in determining if value contained in se : " << e.what() << endl;
     }
 }
-/*
+
 void test_equality()
 {
     try
@@ -191,6 +189,7 @@ void test_equality()
     }
 }
 
+/*
 void test_subset()
 {
     try
@@ -411,14 +410,13 @@ void time_test()
     total += elapsed.count();
     cout << "Total time: " << total << endl;
 }
-
 */
 
 int main()
 {
     test_insert();
     test_remove();
-    //test_cardinality();
+    test_cardinality();
     test_empty();
     test_contains();
     //test_equality();

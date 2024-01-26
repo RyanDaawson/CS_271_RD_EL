@@ -62,6 +62,38 @@ void Set<T>::remove(const T &item)
     }
 }
 
+//cardinality
+template <class T>
+int Set<T>::cardinality() const {
+    int count = 0;
+    Node* currentNode = head;
+    while (currentNode != nullptr) {
+        count++;
+        currentNode = currentNode->next;
+    }
+    return count;
+}
+
+
+//contains
+template <class T>
+bool Set<T>::contains(const T& item) const {
+    Node* currentNode = head;
+    while (currentNode != nullptr) {
+        if (currentNode->item == item) {
+            return true;
+        }
+        currentNode = currentNode->next;
+    }
+    return false;
+}
+
+//empty
+template <class T>
+bool Set<T>::empty() const {
+    return head == nullptr;
+}
+
 //clear
 template <class T>
 void Set<T>::clear()
@@ -74,6 +106,22 @@ void Set<T>::clear()
         currentNode = nextNode;
     }
     head = nullptr;
+}
+
+//==operator
+template <class T>
+bool Set<T>::operator==(const Set<T>& mySet) const {
+    if (cardinality() != mySet.cardinality()) {
+        return false;
+    }
+    Node* currentNode = head;
+    while (currentNode != nullptr) {
+        if (!mySet.contains(currentNode->item)) {
+            return false;
+        }
+        currentNode = currentNode->next;
+    }
+    return true;
 }
 
 // to_string
@@ -92,34 +140,4 @@ std::string Set<T>::to_string() const
         currentNode = currentNode->next;
     }
     return ss.str();
-}
-
-//contains
-template <class T>
-bool Set<T>::contains(const T& item) const {
-    Node* currentNode = head;
-    while (currentNode != nullptr) {
-        if (currentNode->item == item) {
-            return true;
-        }
-        currentNode = currentNode->next;
-    }
-    return false;
-}
-
-//isEmpty
-template <class T>
-bool Set<T>::empty() const {
-    return head == nullptr;
-}
-
-template <class T>
-int Set<T>::cardinality() const {
-    int count = 0;
-    Node* currentNode = head;
-    while (currentNode != nullptr) {
-        count++;
-        currentNode = currentNode->next;
-    }
-    return count;
 }
