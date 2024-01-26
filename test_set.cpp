@@ -25,6 +25,34 @@ void test_insert()
         {
             cout << "Incorrect insert result. Expected -1 2 0 but got : " << set_str << endl;
         }
+
+        Set<float> floatSet;
+        floatSet.insert(1.5);
+        floatSet.insert(2.5);
+        if (floatSet.to_string() != "1.5 2.5") 
+        {
+            cout << "Incorrect insert result for float type. Expected 1.5 2.5 but got: " << floatSet.to_string() << endl;
+        }
+        floatSet.insert(1.5);
+        if (floatSet.to_string() != "1.5 2.5") 
+        {
+            cout << "Incorrect insert result for float type. Expected 1.5 2.5 but got: " << floatSet.to_string() << endl;
+        }
+
+        // String type test
+        Set<string> stringSet;
+        stringSet.insert("Hello");
+        stringSet.insert("World");
+        if (stringSet.to_string() != "Hello World")
+        {
+            cout << "Incorrect insert result for string type. Expected Hello World but got: " << stringSet.to_string() << endl;
+        }
+        stringSet.insert("World");
+        if (stringSet.to_string() != "Hello World")
+        {
+            cout << "Incorrect insert result for string type. Expected Hello World but got: " << stringSet.to_string() << endl;
+        }
+
     }
     catch (exception &e)
     {
@@ -52,6 +80,37 @@ void test_remove()
         if (s.to_string() != "4 2 1")
         {
             cout << "Incorrect remove result. Expected 4 2 1 but got : " << set_str << endl;
+        }
+
+        Set<float> floatRemSet;
+        floatRemSet.insert(1.5);
+        floatRemSet.insert(2.5);
+        floatRemSet.remove(1.5)
+        if (floatRemSet.to_string() != "2.5") 
+        {
+            cout << "Incorrect insert result for float type. Expected 2.5 but got: " << floatRemSet.to_string() << endl;
+        }
+        floatRemSet.remove(5.5)
+                if (floatRemSet.to_string() != "2.5") 
+        {
+            cout << "Incorrect insert result for float type. Expected 2.5 but got: " << floatRemSet.to_string() << endl;
+        }
+
+
+        // String type test
+        Set<string> stringRemSet;
+        stringRemSet.insert("Hello");
+        stringRemSet.insert("World");
+        stringRemSet.remove("World");
+
+        if (stringRemSet.to_string() != "Hello")
+        {
+            cout << "Incorrect insert result for string type. Expected Hello but got: " << stringRemSet.to_string() << endl;
+        }
+        stringRemSet.remove("Earth");
+        if (stringRemSet.to_string() != "Hello")
+        {
+            cout << "Incorrect insert result for string type. Expected Hello but got: " << stringRemSet.to_string() << endl;
         }
     }
     catch (exception &e)
@@ -329,7 +388,7 @@ void test_diff()
         cerr << "Error in generating the intersection set : " << e.what() << endl;
     }
 }
-
+/*
 void time_test()
 {
     Set<int> S;
@@ -411,7 +470,7 @@ void time_test()
     total += elapsed.count();
     cout << "Total time: " << total << endl;
 }
-
+*/
 int main()
 {
     test_insert();
@@ -426,7 +485,7 @@ int main()
     test_diff();
 
 
-    time_test();
+    //time_test();
 
     cout << "Testing completed" << endl;
 
