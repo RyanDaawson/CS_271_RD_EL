@@ -123,3 +123,8 @@ int Set<T>::cardinality() const {
     }
     return count;
 }
+
+template <class T>
+int Set<T>::cardinality() const {
+    int count = 0;
+    Node* currentNode = head;

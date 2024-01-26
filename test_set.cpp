@@ -60,7 +60,7 @@ void test_remove()
     }
 }
 
-/*
+
 void test_cardinality()
 >>>>>>> 3b8fef02c3f121841768316c87fa776c7ed4c113
 {
@@ -95,7 +95,7 @@ void test_cardinality()
         cerr << "Error in determining set cardinality : " << e.what() << endl;
     }
 }
-*/
+
 void test_empty()
 {
     try
@@ -418,7 +418,7 @@ int main()
 {
     test_insert();
     test_remove();
-    //test_cardinality();
+    test_cardinality();
     test_empty();
     test_contains();
     //test_equality();
