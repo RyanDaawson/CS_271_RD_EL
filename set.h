@@ -26,3 +26,10 @@ public:
            void		remove		( int index );
            int		cardinality	( void ) const;
            bool		isEmpty		( void ) const;
+           // contains
+           bool	    operator==	( void ) const;
+           bool     operator<=  ( void ) const;
+           Set<T>   operator+	( const Set<T> &mySet ) const;
+           // &
+           // -
+
