@@ -62,7 +62,6 @@ void test_remove()
 
 
 void test_cardinality()
->>>>>>> 3b8fef02c3f121841768316c87fa776c7ed4c113
 {
     try
     {
