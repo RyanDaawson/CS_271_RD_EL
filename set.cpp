@@ -110,13 +110,18 @@ bool Set<T>::operator==(const Set<T>& mySet) const {
     return true;
 }
 
+//subset
 template <class T>
 bool Set<T>::operator<=(const Set<T>& mySet) const {
     Node* currentNode = head;
     while (currentNode != nullptr) {
+        if (!mySet.contains(currentNode->item)) {
+            return false;
+        }
+        currentNode = currentNode->next;
     }
+    return true;
 }
-
 
 //clear
 template <class T>
