@@ -141,15 +141,29 @@ Set<T> Set<T>::operator+(const Set<T>& mySet) const {
 }
 
 //intersection
-
+template <class T>
+Set<T> Set<T>::operator&(const Set<T>& mySet) const{
+    Set<T> newSet;
+    Node* currentNode = head;
+    while (currentNode !=NULL){
+        if (mySet.contains(currentNode->item))
+        {
+            newSet.insert(currentNiode->item);
+        }
+        currentNode = currentNode -> next;
+    }
+    return newSet;
+}
 
 //difference
 template <class T>
 Set<T> Set<T>::operator-(const Set<T>& mySet) const {
     Set<T> newSet;
     Node* currentNode = head;
-    while (currentNode != NULL){
-        if (!mySet.contains(currentNode->item)){
+    while (currentNode != NULL)
+    {
+        if (!mySet.contains(currentNode->item))
+        {
             newSet.insert(currentNode->item);
         }
         currentNode = currentNode->next;
