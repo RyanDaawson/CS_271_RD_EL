@@ -3,6 +3,16 @@
 
 #include <iostream>
 #include <string>
-#include <vector>
 
 using namespace std;
+
+template <class T> 
+class Set
+{
+private:
+	struct Node
+	{
+		T		item;
+		Node 	*next;
+	};
+	
