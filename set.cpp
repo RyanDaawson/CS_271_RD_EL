@@ -4,13 +4,17 @@
 template <class T>
 Set<T>::Set()
 {
-    head = nullptr; // Initializes the head of the linked list to nullptr.
+    // Pre-condition: none
+    // Post-condition: creates an empty set with head initialized to nullptr.
+    head = nullptr; 
 }
 
 // Copy constructor
 template <class T>
 Set<T>::Set(const Set<T> &mySet)
 {
+    // Pre-condition: mySet is a valid set object.
+    // Post-condition: creates a new set that is a copy of mySet.
     head = nullptr;
     Node *currentNode = mySet.head;  // Starts from the head of the set to be copied
     while (currentNode != nullptr)
@@ -24,19 +28,24 @@ Set<T>::Set(const Set<T> &mySet)
 template <class T>
 Set<T>::~Set()
 {
-    clear(); // Clears the set
+    // Pre-condition: The Set object is initialized
+    // Post-condition: Removes all the nodes
+    clear(); 
 }
 
 // For insert into set
 template <class T>
 void Set<T>::insert(const T &item)
 {
-    if (!contains(item)) //  checking to see if it is not already in set
+    // Pre-condition: The item is of the same type as the set elements.
+    // Post-condition: Moves the item into the set if it is not already present
+    
+    if (!contains(item)) 
     {
-        Node *newNode = new Node; // Creates the new node
-        newNode->item = item; // Assigns the node
-        newNode->next = head; // points to the new node in the head
-        head = newNode; // Makes the new node the new head for the list
+        Node *newNode = new Node; 
+        newNode->item = item; 
+        newNode->next = head; 
+        head = newNode; 
     }
 }
 
@@ -44,6 +53,9 @@ void Set<T>::insert(const T &item)
 template <class T>
 void Set<T>::remove(const T &item)
 {
+    // Pre-condition: The item is the same type as the set elements
+    // Post-condition: Removes the item from the set if it is present
+    
     Node *currentNode = head, *prevNode = nullptr;
     while (currentNode != nullptr)
     {
@@ -68,6 +80,10 @@ void Set<T>::remove(const T &item)
 // For counting the number of items in a set 
 template <class T>
 int Set<T>::cardinality() const {
+    
+    // Pre-condition: None
+    // Post-condition: Returns the number of elements in the set
+    
     int count = 0;
     Node* currentNode = head;
     while (currentNode != nullptr) {
@@ -81,25 +97,35 @@ int Set<T>::cardinality() const {
 // To check if an item is in the set
 template <class T>
 bool Set<T>::contains(const T& item) const {
+
+    // Pre-condition: The item is of the same type as the set elements
+    // Post-condition: Returns true if the item is in the set, false otherwise
+    
     Node* currentNode = head;
     while (currentNode != nullptr) {
         if (currentNode->item == item) {
-            return true;
+            return true; // Returns if the item is found 
         }
         currentNode = currentNode->next;
     }
-    return false;
+    return false; // Returns if the item is not found
 }
 
-//empty
+// Checks if the set is empty 
 template <class T>
 bool Set<T>::empty() const {
-    return head == nullptr;
+    // Pre-condition: none
+    // Post-condition: Returns true if the set is empty, false otherwise.
+    return head == nullptr; 
 }
 
-//==operator
+// The == operator for comparing two sets
 template <class T>
 bool Set<T>::operator==(const Set<T>& mySet) const {
+
+    // Pre-condition: mySet is a valid set object.
+    // Post-condition: Returns true if the sets are equal, false otherwise.
+    
     if (cardinality() != mySet.cardinality()) {
         return false;
     }
@@ -113,9 +139,13 @@ bool Set<T>::operator==(const Set<T>& mySet) const {
     return true;
 }
 
-//subset
+// To check if the current set is a subset
 template <class T>
 bool Set<T>::operator<=(const Set<T>& mySet) const {
+
+    // Pre-condition: mySet is a valid Set object.
+    // Post-condition: Returns true if current set is a subset of mySet, false otherwise.
+    
     Node* currentNode = head;
     while (currentNode != nullptr) {
         if (!mySet.contains(currentNode->item)) {
