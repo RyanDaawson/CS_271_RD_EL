@@ -1,4 +1,4 @@
-#include set.h
+#include "set.h"
 
 template <class T>
 Set<T>::Set()
@@ -24,15 +24,3 @@ Set<T>::~Set()
     clear();
 }
 
-template <class T>
-void Set<T>::clear()
-{
-    Node *currentNode = head;
-    while (currentNode != nullptr)
-    {
-        Node *nextNode = currentNode->next;
-        delete currentNode;
-        currentNode = nextNode;
-    }
-    head = nullptr;
-}
