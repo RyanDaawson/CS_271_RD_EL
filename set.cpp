@@ -1,10 +1,4 @@
-#include <string>
-#include <iostream>
-#include "Set.h"
 
-template <class T>
-Set<T>::Set()
-{
     head = nullptr;
     Node* currentNode = mySet.head;
     while (currentNode != nullptr) {
@@ -12,3 +6,4 @@ Set<T>::Set()
         currentNode = currentNode->next;
     }
 }
+
