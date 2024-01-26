@@ -1,11 +1,11 @@
-#ifndef SET_H
-#define SET_H
-
 #include <iostream>
 #include <string>
 #include <sstream>
 
 using namespace std;
+
+#ifndef SET_H
+#define SET_H
 
 template <class T> 
 class Set
@@ -23,8 +23,8 @@ public:
 			        Set		    ( void );
 			        Set		    ( const Set<T> &mySet );
 		            ~Set		( void );
-           void		insert		( const T &item, int index );
-           void		remove		( int index );
+           void		insert		( const T &item);
+           //void		remove		( int index );
            /*int		cardinality	( void ) const;
            bool		isEmpty		( void ) const;
            bool     contains    (const T& item) const;
@@ -38,5 +38,5 @@ public:
 
 
 }
-#include "set.cpp"
+
 #endif
