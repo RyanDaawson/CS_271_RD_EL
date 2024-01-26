@@ -13,14 +13,20 @@ class Set
 private:
 	struct Node
 	{
-		T		item;
-		Node 	*next;
+		T		item; // Value for the node
+		Node 	*next; // Pointer for the node in the set
 	};
 	
-    Node	*head;	
+    Node	*head; // Pointer to the first node
 
 public:
+	// Default constructor
+	// Pre-condition: None
+	// Post-condition: Creates an empty set
 			            Set		    ( void );
+					// Copy constructor
+					// Pre-condition: A valid Set object is given.
+					// Post-condition: Creates a new set that copys the given set
 			            Set		    ( const Set<T> &mySet );
 		                ~Set		( void );
            void		    insert		( const T &item);
