@@ -1,20 +1,22 @@
 #include "set.h"
 
+// Default constructor
 template <class T>
 Set<T>::Set()
 {
     head = nullptr; // Initializes the head of the linked list to nullptr.
 }
 
+// Copy constructor
 template <class T>
 Set<T>::Set(const Set<T> &mySet)
 {
     head = nullptr;
-    Node *currentNode = mySet.head;
+    Node *currentNode = mySet.head;  // Starts from the head of the set to be copied
     while (currentNode != nullptr)
     {
-        insert(currentNode->item);
-        currentNode = currentNode->next;
+        insert(currentNode->item);  // Moves item from original set into the new set
+        currentNode = currentNode->next; // Moves to the next node of the original set
     }
 }
 
