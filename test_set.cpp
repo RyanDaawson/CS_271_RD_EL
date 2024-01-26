@@ -31,7 +31,7 @@ void test_insert()
         cerr << "Error inserting into set : " << e.what() << endl;
     }
 }
-/*
+
 void test_remove()
 {
     try
@@ -59,8 +59,10 @@ void test_remove()
         cerr << "Error removing from set : " << e.what() << endl;
     }
 }
+
 /*
 void test_cardinality()
+>>>>>>> 3b8fef02c3f121841768316c87fa776c7ed4c113
 {
     try
     {
@@ -93,7 +95,7 @@ void test_cardinality()
         cerr << "Error in determining set cardinality : " << e.what() << endl;
     }
 }
-
+*/
 void test_empty()
 {
     try
@@ -152,7 +154,7 @@ void test_contains()
         cerr << "Error in determining if value contained in se : " << e.what() << endl;
     }
 }
-
+/*
 void test_equality()
 {
     try
@@ -415,19 +417,18 @@ void time_test()
 int main()
 {
     test_insert();
-    /*test_remove();
-    test_cardinality();
-
+    test_remove();
+    //test_cardinality();
     test_empty();
     test_contains();
-    test_equality();
-    test_subset();
-    test_union();
-    test_intersection();
-    test_diff();
-*/
+    //test_equality();
+    //test_subset();
+    //test_union();
+    //test_intersection();
+    //test_diff();
 
-    time_test();*/
+
+   // time_test();
 
     cout << "Testing completed" << endl;
 
