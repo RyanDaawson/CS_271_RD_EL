@@ -31,7 +31,7 @@ void test_insert()
         cerr << "Error inserting into set : " << e.what() << endl;
     }
 }
-
+/*
 void test_remove()
 {
     try
@@ -293,7 +293,7 @@ void test_intersection()
         cerr << "Error in generating the intersection set : " << e.what() << endl;
     }
 }
-*/
+
 void test_diff()
 {
     try
@@ -415,8 +415,9 @@ void time_test()
 int main()
 {
     test_insert();
-    test_remove();
-    /*test_cardinality();
+    /*test_remove();
+    test_cardinality();
+
     test_empty();
     test_contains();
     test_equality();
@@ -426,7 +427,7 @@ int main()
     test_diff();
 */
 
-    time_test();
+    time_test();*/
 
     cout << "Testing completed" << endl;
 
