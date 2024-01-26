@@ -34,5 +34,5 @@ public:
            Set<T>   operator-   (const Set<T>& mySet) const;
 
 }
-#include "Set.cpp"
+#include "set.cpp"
 #endif
