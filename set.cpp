@@ -21,6 +21,16 @@ Set<T>::~Set() {
 }
 
 template <class T>
+void Set<T>::insert(const T& item) {
+    if (!contains(item)) {
+        Node* newNode = new Node;
+        newNode->item = item;
+        newNode->next = head;
+        head = newNode;
+    }
+}
+
+template <class T>
 void Set<T>::clear() {
     Node* currentNode = head;
     while (currentNode != nullptr) {
