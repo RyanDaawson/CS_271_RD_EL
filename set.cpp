@@ -3,7 +3,7 @@
 template <class T>
 Set<T>::Set()
 {
-    head = nullptr;
+    head = nullptr; // Initializes the head of the linked list to nullptr.
 }
 
 template <class T>
