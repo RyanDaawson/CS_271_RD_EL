@@ -93,3 +93,16 @@ std::string Set<T>::to_string() const
     }
     return ss.str();
 }
+
+//contains
+template <class T>
+bool Set<T>::contains(const T& item) const {
+    Node* currentNode = head;
+    while (currentNode != nullptr) {
+        if (currentNode->item == item) {
+            return true;
+        }
+        currentNode = currentNode->next;
+    }
+    return false;
+}
