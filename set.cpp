@@ -33,6 +33,20 @@ void Set<T>::insert(const T& item) {
 template <class T>
 void Set<T>::remove(const T& item) {
     Node *currentNode = head, *prevNode = nullptr;
+        Node *currentNode = head, *prevNode = nullptr;
+    while (currentNode != nullptr) {
+        if (currentNode->item == item) {
+            if (prevNode == nullptr) {
+                head = currentNode->next;
+            } else {
+                prevNode->next = currentNode->next;
+            }
+            delete currentNode;
+            return;
+        }
+        prevNode = currentNode;
+        currentNode = currentNode->next;
+    }
 }
 
 template <class T>
