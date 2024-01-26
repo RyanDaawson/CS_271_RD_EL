@@ -107,7 +107,7 @@ bool Set<T>::contains(const T& item) const {
     return false;
 }
 
-//isEmpty
+//empty
 template <class T>
 bool Set<T>::empty() const {
     return head == nullptr;
@@ -124,6 +124,7 @@ int Set<T>::cardinality() const {
     return count;
 }
 
+//cardinality
 template <class T>
 int Set<T>::cardinality() const {
     int count = 0;
