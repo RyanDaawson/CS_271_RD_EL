@@ -53,3 +53,18 @@ void Set<T>::remove(const T& item) {
         currentNode = currentNode->next;
     }
 }
+
+// to_string
+template <class T>
+std::string Set<T>::to_string() const {
+    std::stringstream ss;
+    Node* currentNode = head;
+    while (currentNode != nullptr) {
+        ss << currentNode->item;
+        if (currentNode->next != nullptr) {
+            ss << " ";
+        }
+        currentNode = currentNode->next;
+    }
+    return ss.str();
+}
