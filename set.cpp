@@ -93,35 +93,3 @@ std::string Set<T>::to_string() const
     }
     return ss.str();
 }
-
-<<<<<<< HEAD
-//contain
-template <class T>
-bool Set<T>::contains(const T& item) const {
-    Node* currentNode = head;
-    while (currentNode != nullptr) {
-        if (currentNode->item == item) {
-=======
-template <class T>
-bool Set<T>::contains(const T &item) const
-{
-    Node *currentNode = head;
-    while (currentNode != nullptr)
-    {
-        if (currentNode->item == item)
-        {
->>>>>>> 33762c2069fae2205e5a9ee9b6df2e5d7f7bde3e
-            return true;
-        }
-        currentNode = currentNode->next;
-    }
-    return false;
-<<<<<<< HEAD
-}
-
-template <class T>
-bool Set<T>::isEmpty() const {
-    return head == nullptr;
-=======
->>>>>>> 33762c2069fae2205e5a9ee9b6df2e5d7f7bde3e
-}
