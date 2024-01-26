@@ -94,20 +94,6 @@ bool Set<T>::empty() const {
     return head == nullptr;
 }
 
-//clear
-template <class T>
-void Set<T>::clear()
-{
-    Node *currentNode = head;
-    while (currentNode != nullptr)
-    {
-        Node *nextNode = currentNode->next;
-        delete currentNode;
-        currentNode = nextNode;
-    }
-    head = nullptr;
-}
-
 //==operator
 template <class T>
 bool Set<T>::operator==(const Set<T>& mySet) const {
@@ -123,6 +109,30 @@ bool Set<T>::operator==(const Set<T>& mySet) const {
     }
     return true;
 }
+
+template <class T>
+bool Set<T>::operator<=(const Set<T>& mySet) const {
+    Node* currentNode = head;
+    while (currentNode != nullptr) {
+    }
+}
+
+
+//clear
+template <class T>
+void Set<T>::clear()
+{
+    Node *currentNode = head;
+    while (currentNode != nullptr)
+    {
+        Node *nextNode = currentNode->next;
+        delete currentNode;
+        currentNode = nextNode;
+    }
+    head = nullptr;
+}
+
+
 
 // to_string
 template <class T>
