@@ -109,6 +109,17 @@ bool Set<T>::contains(const T& item) const {
 
 //isEmpty
 template <class T>
-bool Set<T>::isEmpty() const {
+bool Set<T>::empty() const {
     return head == nullptr;
+}
+
+template <class T>
+int Set<T>::cardinality() const {
+    int count = 0;
+    Node* currentNode = head;
+    while (currentNode != nullptr) {
+        count++;
+        currentNode = currentNode->next;
+    }
+    return count;
 }
