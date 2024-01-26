@@ -32,6 +32,8 @@ public:
            Set<T>   operator+	( const Set<T> &mySet ) const;
            Set<T>   operator&   (const Set<T>& mySet) const;
            Set<T>   operator-   (const Set<T>& mySet) const;
+           void     clear       ( void );
+
 
 }
 #include "set.cpp"
