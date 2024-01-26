@@ -419,7 +419,7 @@ int main()
     test_cardinality();
     test_empty();
     test_contains();
-    //test_equality();
+    test_equality();
     //test_subset();
     //test_union();
     //test_intersection();
