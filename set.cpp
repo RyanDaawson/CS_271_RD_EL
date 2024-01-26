@@ -123,6 +123,15 @@ bool Set<T>::operator<=(const Set<T>& mySet) const {
     return true;
 }
 
+//+operator
+template <class T>
+Set<T> Set<T>::operator+(const Set<T>& mySet) const {
+    Set<T> resultSet;
+    Node* currentNode = head;
+
+    
+}
+
 //clear
 template <class T>
 void Set<T>::clear()
@@ -136,7 +145,6 @@ void Set<T>::clear()
     }
     head = nullptr;
 }
-
 
 
 // to_string

@@ -189,7 +189,7 @@ void test_equality()
     }
 }
 
-/*
+
 void test_subset()
 {
     try
@@ -229,6 +229,7 @@ void test_subset()
     }
 }
 
+
 void test_union()
 {
     try
@@ -262,6 +263,7 @@ void test_union()
     }
 }
 
+/*
 void test_intersection()
 {
     try
@@ -420,7 +422,7 @@ int main()
     test_contains();
     test_equality();
     test_subset();
-    //test_union();
+    test_union();
     //test_intersection();
     //test_diff();
 
