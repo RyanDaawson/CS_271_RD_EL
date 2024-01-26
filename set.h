@@ -25,7 +25,7 @@ public:
 		                ~Set		( void );
            void		    insert		( const T &item);
            void		    remove		( const T &item );
-           //int		cardinality	( void ) const;
+           int		cardinality	( void ) const;
            bool		    empty		( void ) const;
            bool         contains    (const T& item) const;
            //bool	    operator==	( void ) const;
