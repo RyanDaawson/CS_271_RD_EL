@@ -111,6 +111,9 @@ void Set<T>::clear()
 //==operator
 template <class T>
 bool Set<T>::operator==(const Set<T>& mySet) const {
+    if (cardinality() != mySet.cardinality()) {
+        return false;
+    }
     Node* currentNode = head;
     while (currentNode != nullptr) {
         if (!mySet.contains(currentNode->item)) {
