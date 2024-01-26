@@ -31,54 +31,54 @@ Set<T>::~Set()
 template <class T>
 void Set<T>::insert(const T &item)
 {
-    if (!contains(item))
+    if (!contains(item)) //  checking to see if it is not already in set
     {
-        Node *newNode = new Node;
-        newNode->item = item;
-        newNode->next = head;
-        head = newNode;
+        Node *newNode = new Node; // Creates the new node
+        newNode->item = item; // Assigns the node
+        newNode->next = head; // points to the new node in the head
+        head = newNode; // Makes the new node the new head for the list
     }
 }
 
-// remove
+// For removeing an item in the set
 template <class T>
 void Set<T>::remove(const T &item)
 {
     Node *currentNode = head, *prevNode = nullptr;
     while (currentNode != nullptr)
     {
-        if (currentNode->item == item)
+        if (currentNode->item == item) // Checks if the current node contains the item
         {
-            if (prevNode == nullptr)
+            if (prevNode == nullptr) // If the item is at the head of the list
             {
-                head = currentNode->next;
+                head = currentNode->next; // Moves the head to the next node
             }
             else
             {
-                prevNode->next = currentNode->next;
+                prevNode->next = currentNode->next; // Links the node to the next node
             }
             delete currentNode;
             return;
         }
-        prevNode = currentNode;
+        prevNode = currentNode; // Moves to the next node in the list
         currentNode = currentNode->next;
     }
 }
 
-//cardinality
+// For counting the number of items in a set 
 template <class T>
 int Set<T>::cardinality() const {
     int count = 0;
     Node* currentNode = head;
     while (currentNode != nullptr) {
-        count++;
-        currentNode = currentNode->next;
+        count++; // Increments the count for the nodes 
+        currentNode = currentNode->next; // Moves to the next 
     }
     return count;
 }
 
 
-//contains
+// To check if an item is in the set
 template <class T>
 bool Set<T>::contains(const T& item) const {
     Node* currentNode = head;
