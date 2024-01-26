@@ -60,7 +60,6 @@ void test_remove()
     }
 }
 
-
 void test_cardinality()
 {
     try
