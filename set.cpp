@@ -20,13 +20,14 @@ Set<T>::Set(const Set<T> &mySet)
     }
 }
 
+// Destructor
 template <class T>
 Set<T>::~Set()
 {
-    clear();
+    clear(); // Clears the set
 }
 
-// insert
+// For insert into set
 template <class T>
 void Set<T>::insert(const T &item)
 {
