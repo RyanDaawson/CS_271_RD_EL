@@ -24,26 +24,34 @@ Set<T>::~Set()
     clear();
 }
 
-//insert
+// insert
 template <class T>
-void Set<T>::insert(const T& item) {
-    if (!contains(item)) {
-        Node* newNode = new Node;
+void Set<T>::insert(const T &item)
+{
+    if (!contains(item))
+    {
+        Node *newNode = new Node;
         newNode->item = item;
         newNode->next = head;
         head = newNode;
     }
 }
 
-//remove
+// remove
 template <class T>
-void Set<T>::remove(const T& item) {
+void Set<T>::remove(const T &item)
+{
     Node *currentNode = head, *prevNode = nullptr;
-    while (currentNode != nullptr) {
-        if (currentNode->item == item) {
-            if (prevNode == nullptr) {
+    while (currentNode != nullptr)
+    {
+        if (currentNode->item == item)
+        {
+            if (prevNode == nullptr)
+            {
                 head = currentNode->next;
-            } else {
+            }
+            else
+            {
                 prevNode->next = currentNode->next;
             }
             delete currentNode;
@@ -54,30 +62,49 @@ void Set<T>::remove(const T& item) {
     }
 }
 
-//clear
+// clear
 template <class T>
-void Set<T>::clear() {
-    Node* currentNode = head;
-    while (currentNode != nullptr) {
-        Node* nextNode = currentNode->next;
+void Set<T>::clear()
+{
+    Node *currentNode = head;
+    while (currentNode != nullptr)
+    {
+        Node *nextNode = currentNode->next;
         delete currentNode;
         currentNode = nextNode;
     }
     head = nullptr;
 }
 
-
 // to_string
 template <class T>
-std::string Set<T>::to_string() const {
+std::string Set<T>::to_string() const
+{
     std::stringstream ss;
-    Node* currentNode = head;
-    while (currentNode != nullptr) {
+    Node *currentNode = head;
+    while (currentNode != nullptr)
+    {
         ss << currentNode->item;
-        if (currentNode->next != nullptr) {
+        if (currentNode->next != nullptr)
+        {
             ss << " ";
         }
         currentNode = currentNode->next;
     }
     return ss.str();
+}
+
+template <class T>
+bool Set<T>::contains(const T &item) const
+{
+    Node *currentNode = head;
+    while (currentNode != nullptr)
+    {
+        if (currentNode->item == item)
+        {
+            return true;
+        }
+        currentNode = currentNode->next;
+    }
+    return false;
 }
