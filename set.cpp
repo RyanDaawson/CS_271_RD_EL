@@ -24,6 +24,7 @@ Set<T>::~Set()
     clear();
 }
 
+//insert
 template <class T>
 void Set<T>::insert(const T& item) {
     if (!contains(item)) {
@@ -31,5 +32,24 @@ void Set<T>::insert(const T& item) {
         newNode->item = item;
         newNode->next = head;
         head = newNode;
+    }
+}
+
+//remove
+template <class T>
+void Set<T>::remove(const T& item) {
+    Node *currentNode = head, *prevNode = nullptr;
+    while (currentNode != nullptr) {
+        if (currentNode->item == item) {
+            if (prevNode == nullptr) {
+                head = currentNode->next;
+            } else {
+                prevNode->next = currentNode->next;
+            }
+            delete currentNode;
+            return;
+        }
+        prevNode = currentNode;
+        currentNode = currentNode->next;
     }
 }
