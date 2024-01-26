@@ -123,7 +123,7 @@ bool Set<T>::empty() const {
 template <class T>
 bool Set<T>::operator==(const Set<T>& mySet) const {
 
-    // Pre-condition: mySet is a valid set object.
+    // Pre-condition: mySet is a set object.
     // Post-condition: Returns true if the sets are equal, false otherwise.
     
     if (cardinality() != mySet.cardinality()) {
@@ -143,7 +143,7 @@ bool Set<T>::operator==(const Set<T>& mySet) const {
 template <class T>
 bool Set<T>::operator<=(const Set<T>& mySet) const {
 
-    // Pre-condition: mySet is a valid Set object.
+    // Pre-condition: mySet is a set object.
     // Post-condition: Returns true if current set is a subset of mySet, false otherwise.
     
     Node* currentNode = head;
@@ -160,7 +160,7 @@ bool Set<T>::operator<=(const Set<T>& mySet) const {
 template <class T>
 Set<T> Set<T>::operator+(const Set<T>& mySet) const {
     
-    // Pre-condition: mySet is a valid Set object.
+    // Pre-condition: mySet is a set object.
     // Post-condition: Returns a new set that is the union of the current set and mySet.
     
     Set<T> new;
@@ -181,7 +181,7 @@ Set<T> Set<T>::operator+(const Set<T>& mySet) const {
 template <class T>
 Set<T> Set<T>::operator&(const Set<T>& mySet) const{
 
-    // Pre-condition: mySet is a valid Set object.
+    // Pre-condition: mySet is a set object.
     // Post-condition: Returns a new set that is the current set and mySet.
     
     Set<T> newSet;
@@ -199,6 +199,10 @@ Set<T> Set<T>::operator&(const Set<T>& mySet) const{
 //difference
 template <class T>
 Set<T> Set<T>::operator-(const Set<T>& mySet) const {
+
+    // Pre-condition: mySet is a set object.
+    // Post-condition: Returns a new set that is difference of current and mySet
+    
     Set<T> newSet;
     Node* currentNode = head;
     while (currentNode != NULL)
@@ -212,10 +216,13 @@ Set<T> Set<T>::operator-(const Set<T>& mySet) const {
     return newSet;
 }
 
-//clear
+// For the clear
 template <class T>
 void Set<T>::clear()
 {
+
+    // Pre-condition: None
+    // Post-condioton: Clears the set and deleting all its elements
     Node *currentNode = head;
     while (currentNode != nullptr)
     {
@@ -227,10 +234,12 @@ void Set<T>::clear()
 }
 
 
-// to_string
+// For converting the set to the string representation
 template <class T>
 std::string Set<T>::to_string() const
 {
+    // Pre-condition: None
+    // Post-condtion: Returns a string representation of the set.
     std::stringstream ss;
     Node *currentNode = head;
     while (currentNode != nullptr)
