@@ -59,7 +59,7 @@ void test_remove()
         cerr << "Error removing from set : " << e.what() << endl;
     }
 }
-
+/*
 void test_cardinality()
 {
     try
@@ -327,7 +327,6 @@ void test_diff()
     }
 }
 
-
 /*
 void time_test()
 {
@@ -413,13 +412,12 @@ void time_test()
 
 */
 
-
-
 int main()
 {
     test_insert();
     /*test_remove();
     test_cardinality();
+
     test_empty();
     test_contains();
     test_equality();
@@ -427,6 +425,7 @@ int main()
     test_union();
     test_intersection();
     test_diff();
+*/
 
     time_test();*/
 
