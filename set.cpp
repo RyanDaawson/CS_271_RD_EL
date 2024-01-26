@@ -163,13 +163,9 @@ Set<T> Set<T>::operator+(const Set<T>& mySet) const {
     // Pre-condition: mySet is a set object.
     // Post-condition: Returns a new set that is the union of the current set and mySet.
     
-<<<<<<< HEAD
+
     Set<T> newSet;
     Node* currentNode = head;
-=======
-    Set<T> new;
-    Node* currentNode = mySet.head;
->>>>>>> afa911cb04a892101abbecc7439703683a21abcc
     while (currentNode != nullptr) {
         newSet.insert(currentNode->item);
         currentNode = currentNode->next;
