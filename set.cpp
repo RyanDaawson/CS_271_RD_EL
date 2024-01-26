@@ -165,7 +165,7 @@ Set<T> Set<T>::operator+(const Set<T>& mySet) const {
     
 
     Set<T> newSet;
-    Node* currentNode = head;
+    Node* currentNode = mySet.head;
     while (currentNode != nullptr) {
         newSet.insert(currentNode->item);
         currentNode = currentNode->next;
