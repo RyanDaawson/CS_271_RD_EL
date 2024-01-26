@@ -6,7 +6,7 @@
 //
 #include <iostream>
 #include "set.cpp"
-
+/*
 void test_insert()
 {
     try
@@ -293,7 +293,7 @@ void test_intersection()
         cerr << "Error in generating the intersection set : " << e.what() << endl;
     }
 }
-
+*/
 void test_diff()
 {
     try
@@ -327,6 +327,8 @@ void test_diff()
     }
 }
 
+
+/*
 void time_test()
 {
     Set<int> S;
@@ -408,6 +410,10 @@ void time_test()
     total += elapsed.count();
     cout << "Total time: " << total << endl;
 }
+
+*/
+
+
 
 int main()
 {

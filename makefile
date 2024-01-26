@@ -1,4 +1,4 @@
-all: trst
+all: test
 
 test: test_set.o
 	g++ -std=c++11 -Wall -g -o test test_set.o
