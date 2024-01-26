@@ -24,14 +24,14 @@ public:
 		            ~Set		( void );
            void		insert		( const T &item, int index );
            void		remove		( int index );
-           int		cardinality	( void ) const;
+           /*int		cardinality	( void ) const;
            bool		isEmpty		( void ) const;
            bool     contains    (const T& item) const;
            bool	    operator==	( void ) const;
            bool     operator<=  ( void ) const;
            Set<T>   operator+	( const Set<T> &mySet ) const;
            Set<T>   operator&   (const Set<T>& mySet) const;
-           Set<T>   operator-   (const Set<T>& mySet) const;
+           Set<T>   operator-   (const Set<T>& mySet) const;*/
            void     clear       ( void );
            std::string to_string() const;
 
