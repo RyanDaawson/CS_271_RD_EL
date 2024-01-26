@@ -62,20 +62,6 @@ void Set<T>::remove(const T &item)
     }
 }
 
-//clear
-template <class T>
-void Set<T>::clear()
-{
-    Node *currentNode = head;
-    while (currentNode != nullptr)
-    {
-        Node *nextNode = currentNode->next;
-        delete currentNode;
-        currentNode = nextNode;
-    }
-    head = nullptr;
-}
-
 // to_string
 template <class T>
 std::string Set<T>::to_string() const
@@ -134,4 +120,18 @@ int Set<T>::cardinality() const {
         currentNode = currentNode->next;
     }
     return count;
+}
+
+//clear
+template <class T>
+void Set<T>::clear()
+{
+    Node *currentNode = head;
+    while (currentNode != nullptr)
+    {
+        Node *nextNode = currentNode->next;
+        delete currentNode;
+        currentNode = nextNode;
+    }
+    head = nullptr;
 }
