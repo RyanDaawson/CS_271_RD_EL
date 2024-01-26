@@ -3,7 +3,7 @@
 template <class T>
 Set<T>::Set()
 {
-    head = nullptr
+    head = nullptr;
 }
 
 template <class T>
@@ -53,6 +53,19 @@ void Set<T>::remove(const T& item) {
         currentNode = currentNode->next;
     }
 }
+
+//clear
+template <class T>
+void Set<T>::clear() {
+    Node* currentNode = head;
+    while (currentNode != nullptr) {
+        Node* nextNode = currentNode->next;
+        delete currentNode;
+        currentNode = nextNode;
+    }
+    head = nullptr;
+}
+
 
 // to_string
 template <class T>
