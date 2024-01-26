@@ -132,7 +132,12 @@ Set<T> Set<T>::operator+(const Set<T>& mySet) const {
         newSet.insert(currentNode->item);
         currentNode = currentNode->next;
     }
-
+    currentNode = mySet.head;
+    while (currentNode != nullptr) {
+        newSet.insert(currentNode->item);
+        currentNode = currentNode->next;
+    }
+    return resultSet;
 }
 
 //clear
