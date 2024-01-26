@@ -163,7 +163,7 @@ Set<T> Set<T>::operator+(const Set<T>& mySet) const {
     // Pre-condition: mySet is a set object.
     // Post-condition: Returns a new set that is the union of the current set and mySet.
     
-    Set<T> new;
+    Set<T> newSet;
     Node* currentNode = head;
     while (currentNode != nullptr) {
         newSet.insert(currentNode->item);
@@ -174,7 +174,7 @@ Set<T> Set<T>::operator+(const Set<T>& mySet) const {
         newSet.insert(currentNode->item);
         currentNode = currentNode->next;
     }
-    return new;
+    return newSet;
 }
 
 // Overleaded & operator for the two sets
