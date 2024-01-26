@@ -62,23 +62,18 @@ void Set<T>::remove(const T &item)
     }
 }
 
-// to_string
+//cardinality
 template <class T>
-std::string Set<T>::to_string() const
-{
-    std::stringstream ss;
-    Node *currentNode = head;
-    while (currentNode != nullptr)
-    {
-        ss << currentNode->item;
-        if (currentNode->next != nullptr)
-        {
-            ss << " ";
-        }
+int Set<T>::cardinality() const {
+    int count = 0;
+    Node* currentNode = head;
+    while (currentNode != nullptr) {
+        count++;
         currentNode = currentNode->next;
     }
-    return ss.str();
+    return count;
 }
+
 
 //contains
 template <class T>
@@ -99,29 +94,6 @@ bool Set<T>::empty() const {
     return head == nullptr;
 }
 
-template <class T>
-int Set<T>::cardinality() const {
-    int count = 0;
-    Node* currentNode = head;
-    while (currentNode != nullptr) {
-        count++;
-        currentNode = currentNode->next;
-    }
-    return count;
-}
-
-//cardinality
-template <class T>
-int Set<T>::cardinality() const {
-    int count = 0;
-    Node* currentNode = head;
-    while (currentNode != nullptr) {
-        count++;
-        currentNode = currentNode->next;
-    }
-    return count;
-}
-
 //clear
 template <class T>
 void Set<T>::clear()
@@ -134,4 +106,22 @@ void Set<T>::clear()
         currentNode = nextNode;
     }
     head = nullptr;
+}
+
+// to_string
+template <class T>
+std::string Set<T>::to_string() const
+{
+    std::stringstream ss;
+    Node *currentNode = head;
+    while (currentNode != nullptr)
+    {
+        ss << currentNode->item;
+        if (currentNode->next != nullptr)
+        {
+            ss << " ";
+        }
+        currentNode = currentNode->next;
+    }
+    return ss.str();
 }
