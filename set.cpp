@@ -127,12 +127,12 @@ bool Set<T>::operator<=(const Set<T>& mySet) const {
 template <class T>
 Set<T> Set<T>::operator+(const Set<T>& mySet) const {
     Set<T> new;
-    Node* currentNode = head;
+    Node* currentNode = mySet.head;
     while (currentNode != nullptr) {
         newSet.insert(currentNode->item);
         currentNode = currentNode->next;
     }
-    currentNode = mySet.head;
+    currentNode = head;
     while (currentNode != nullptr) {
         newSet.insert(currentNode->item);
         currentNode = currentNode->next;
