@@ -189,7 +189,7 @@ void test_equality()
     }
 }
 
-/*
+
 void test_subset()
 {
     try
@@ -229,6 +229,7 @@ void test_subset()
     }
 }
 
+
 void test_union()
 {
     try
@@ -262,6 +263,7 @@ void test_union()
     }
 }
 
+/*
 void test_intersection()
 {
     try
@@ -328,7 +330,7 @@ void test_diff()
     }
 }
 
-/*
+*/
 void time_test()
 {
     Set<int> S;
@@ -410,7 +412,6 @@ void time_test()
     total += elapsed.count();
     cout << "Total time: " << total << endl;
 }
-*/
 
 int main()
 {
@@ -420,13 +421,13 @@ int main()
     test_empty();
     test_contains();
     test_equality();
-    //test_subset();
-    //test_union();
+    test_subset();
+    test_union();
     //test_intersection();
     //test_diff();
 
 
-   // time_test();
+    time_test();
 
     cout << "Testing completed" << endl;
 

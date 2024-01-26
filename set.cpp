@@ -94,20 +94,6 @@ bool Set<T>::empty() const {
     return head == nullptr;
 }
 
-//clear
-template <class T>
-void Set<T>::clear()
-{
-    Node *currentNode = head;
-    while (currentNode != nullptr)
-    {
-        Node *nextNode = currentNode->next;
-        delete currentNode;
-        currentNode = nextNode;
-    }
-    head = nullptr;
-}
-
 //==operator
 template <class T>
 bool Set<T>::operator==(const Set<T>& mySet) const {
@@ -123,6 +109,62 @@ bool Set<T>::operator==(const Set<T>& mySet) const {
     }
     return true;
 }
+
+//subset
+template <class T>
+bool Set<T>::operator<=(const Set<T>& mySet) const {
+    Node* currentNode = head;
+    while (currentNode != nullptr) {
+        if (!mySet.contains(currentNode->item)) {
+            return false;
+        }
+        currentNode = currentNode->next;
+    }
+    return true;
+}
+
+//union
+template <class T>
+Set<T> Set<T>::operator+(const Set<T>& mySet) const {
+    Set<T> resultSet;
+    Node* currentNode = head;
+    while (currentNode != nullptr) {
+        newSet.insert(currentNode->item);
+        currentNode = currentNode->next;
+    }
+    currentNode = mySet.head;
+    while (currentNode != nullptr) {
+        newSet.insert(currentNode->item);
+        currentNode = currentNode->next;
+    }
+    return resultSet;
+}
+
+//intersection
+
+
+//difference
+template <class T>
+Set<T> Set<T>::operator-(const Set<T>& mySet) const {
+    Set<T> newSet;
+    Node* currentNode = head;
+
+}
+
+//clear
+template <class T>
+void Set<T>::clear()
+{
+    Node *currentNode = head;
+    while (currentNode != nullptr)
+    {
+        Node *nextNode = currentNode->next;
+        delete currentNode;
+        currentNode = nextNode;
+    }
+    head = nullptr;
+}
+
 
 // to_string
 template <class T>

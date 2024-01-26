@@ -29,14 +29,12 @@ public:
            bool		    empty		( void ) const;
            bool         contains    (const T& item) const;
            bool	        operator==	( const Set<T>& mySet ) const;
-           //bool       operator<=  ( void ) const;
-           //Set<T>     operator+	( const Set<T> &mySet ) const;
+           bool         operator<=  ( const Set<T>& mySet ) const;
+           Set<T>     operator+	( const Set<T> &mySet ) const;
            //Set<T>     operator&   (const Set<T>& mySet) const;
-           //Set<T>     operator-   (const Set<T>& mySet) const;
+           Set<T>     operator-   (const Set<T>& mySet) const;
            void         clear       ( void );
            std::string  to_string   ( void ) const;
-
-
 };
 
 #endif
