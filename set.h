@@ -16,3 +16,13 @@ private:
 		Node 	*next;
 	};
 	
+    Node	*head;		// the pointer for the linked list
+
+public:
+			        Set		    ( void );
+			        Set		    ( const Set<T> &mySet );
+		            ~Set		( void );
+           void		insert		( const T &item, int index );
+           void		remove		( int index );
+           int		cardinality	( void ) const;
+           bool		isEmpty		( void ) const;
