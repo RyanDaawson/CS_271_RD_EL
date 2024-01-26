@@ -62,7 +62,7 @@ void Set<T>::remove(const T &item)
     }
 }
 
-// clear
+//clear
 template <class T>
 void Set<T>::clear()
 {
@@ -105,4 +105,10 @@ bool Set<T>::contains(const T& item) const {
         currentNode = currentNode->next;
     }
     return false;
+}
+
+//isEmpty
+template <class T>
+bool Set<T>::isEmpty() const {
+    return head == nullptr;
 }
