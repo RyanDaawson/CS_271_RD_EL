@@ -263,7 +263,7 @@ void test_union()
     }
 }
 
-/*
+
 void test_intersection()
 {
     try
@@ -330,7 +330,6 @@ void test_diff()
     }
 }
 
-*/
 void time_test()
 {
     Set<int> S;
@@ -423,8 +422,8 @@ int main()
     test_equality();
     test_subset();
     test_union();
-    //test_intersection();
-    //test_diff();
+    test_intersection();
+    test_diff();
 
 
     time_test();

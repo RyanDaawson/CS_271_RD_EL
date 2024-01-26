@@ -141,7 +141,11 @@ Set<T> Set<T>::operator+(const Set<T>& mySet) const {
 }
 
 //intersection
-
+template <class T>
+Set<T> Set<T>::operator&(const Set<T>& mySet) const;{
+    
+    return newSet;
+}
 
 //difference
 template <class T>
